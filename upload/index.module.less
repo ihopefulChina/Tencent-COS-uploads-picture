@@ -1,0 +1,113 @@
+.upload {
+  // display: flex;
+  // align-items: center;
+  // flex-wrap: wrap;
+  .uploadList {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .item {
+      // 设计图为158px,一行放不下4个
+      width: 152px;
+      height: 152px;
+      position: relative;
+      margin-right: 20px;
+      margin-top: 20px;
+      .img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+      .del {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 26px;
+        z-index: 99;
+      }
+      .progress {
+        width: 152px;
+        height: 152px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0.2;
+        color: #fff;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .uploadBtn {
+      position: relative;
+      margin-top: 20px;
+      .uploadInput {
+        width: 158px;
+        height: 158px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0; //将input设为透明
+      }
+      .uploadPlus {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 158px;
+        height: 158px;
+        background: #f4f5f7;
+        border-radius: 10px;
+        img {
+          width: 60px;
+          height: 60px;
+        }
+        span {
+          font-size: 22px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #999999;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+}
+:global {
+  .wx-image-viewer {
+    z-index: 99999 !important;
+  }
+  .am-image-picker-list {
+    padding: 0;
+    margin: 0;
+    .am-flexbox-item {
+      flex: auto;
+
+      border-radius: 10px;
+      margin-left: 20px;
+      .am-image-picker-upload-btn {
+        width: 158px;
+        height: 158px;
+        background: #f4f5f7;
+        border: none;
+        border-radius: 10px;
+      }
+    }
+  }
+  .am-image-picker-list .am-flexbox .am-flexbox-item {
+    margin-right: 20px;
+  }
+  .am-image-picker-list .am-image-picker-upload-btn:before,
+  .am-image-picker-list .am-image-picker-upload-btn:after {
+    width: 3px;
+    height: 50px;
+  }
+  .am-image-picker-list .am-image-picker-upload-btn:after {
+    width: 50px;
+    height: 3px;
+  }
+}
